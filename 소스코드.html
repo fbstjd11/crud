@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<title> CRUD 쇼핑몰 </title>
+<head>
+    <style>
+        form fieldset {
+            margin: 10px 0px;
+        }
+
+        form legend {
+            font-size: 18px;
+            color: #0066ff;
+            font-weight: 600;
+        }
+
+        form label.reg {
+            font-size: 14px;
+            width: 120px;
+            float: left;
+        }
+
+        form label em {
+            font-size: 15px;
+            color: red;
+            font-weight: 800;
+        }
+
+        form ul li {
+            list-style: none;
+        }
+
+        form fieldset.sendform {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function fnDelete(member_id) {
+		if(confirm("정말 삭제하시겠습니까?")) {
+			location.href='memberDeleteAction.me?member_id=' + member_id;
+		}
+	}
+        function fnDelete(member_id) {
+		if(confirm("정말 삭제하시겠습니까?")) {
+			location.href='memberDeleteAction.me?member_id=' + member_id;
+		}
+	}
+    </script>
+
+    <body>
+        
+        <form action="2_process.jsp" method="post" />
+        <fieldset>
+            <legend> CRUD 로그인 </legend>
+            <label for="user_id"> 이름 </label>
+            <input type="text" id="user_id" name="user_id" size="10" autofocus>
+
+            <label for="user_pw"> 전화번호 </label>
+            <input type="password" id="user_pw" name="user_pw">
+        </fieldset>
+
+        <fieldset>
+            <legend> CRUD 쇼핑몰 회원가입 </legend>
+            <ul>
+                
+               
+                <li> <label class="reg" for="user_name"> 이름 <em> * </em> </label>
+                    <input type="text" id="user_name" name="user_name" size="20" required>
+                </li>
+                <li>  성별 <em> * </em> <input type="radio" name="member_gender" value="남" checked="checked" />남자
+					<input type="radio" name="member_gender" value="여" />여자
+                </li>
+                
+                <li> <label class="reg" for="user_tel"> 전화 번호 </label>
+                    <input type="tel" id="user_tel" name="user_tel" size="20">
+                </li>
+            </ul>
+            <fieldset class="sendform">
+            <input type="submit" value="가입하기">
+            <input type="reset" value="관리자로 로그인">
+            <input type="submit" value="로그인">
+            <button type="button" onclick="location.href='회원관리파일.html">회원관리</button>
+        </fieldset>
+            
+        </fieldset>
+        <fieldset><h2>회원리스트</h2>
+            <table border="1"><tr>
+			<th>이름</th>
+			<th>성별</th>
+			<th>전화번호</th>
+            </tr>
+           
+            <tr>
+            <th>최륜성</th>
+                <th>남자</th>
+			<th>01090762691</th>
+                </tr>
+            </table>
+		
+           </fieldset>
+        
+        
+        <fieldset class="easys">
+            <legend> 텍스트 입력창 </legend>
+            <textarea rows="intro" cols="60" rows="5" name="intro">
+쇼핑몰 가입 경유:
+                </textarea>
+            
+
+        
+            
+            <h2> CRUD 쇼핑몰 회원정보 수정</h2> 
+<fieldset> 
+<legend>회원 조회</legend> 
+<form action="loginPro.jsp" method="post"> 
+        이름 :<input type="text" name="id"><br> 
+        성별 :남<input type="radio" name="gender" value="남">
+        여<input type="radio" name="gender" value ="여"><br> 
+        전화번호:<input type="password" name="pass"><br> 
+    <br><input type="submit" value="회원조회"> 
+    
+    
+  
+    </form>
+    </fieldset>
+    <h2> CRUD 회원 조회결과</h2>
+    <table border="1">
+		<tr>
+			<th>이름</th>
+			<th>전화번호</th>
+			<th>삭제</th>
+            <th>정보수정</th>
+            
+		</tr>
+		<tr>
+			<th>없음</th>
+			<th>없음</th>
+			<th><input type="button" value="삭제" onclick="fnDelete('${i.member_id }')" /></th>
+            <th><input type="button" value="정보수정" onclick="fnDelete('${i.member_id }')" /></th>
+            
+		</tr>
